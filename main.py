@@ -1,24 +1,30 @@
 import sys
 
-xmlFilePath = ""
+kmlFilePath = ""
 outFilePath = ""
-roundCoords = False
+roundCoords = True
+kmlPlaceMarkers = {}
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
-        xmlFilePath = sys.argv[1]
+        kmlFilePath = sys.argv[1]
         outFilePath = f"{sys.argv[1].split('.')[0]}.txt"
-
+    elif len(sys.argv) == 3:
+        kmlFilePath = sys.argv[1]
+        outFilePath = f"{sys.argv[1].split('.')[0]}.txt"
+        if str(sys.argv[2]).lower() == "y":
+            roundCoords = True
+        elif str(sys.argv[2]).lower() == "n":
+            roundCoords = False
+        else:
+            print(f"{sys.argv[2]}, is not a valid option for Rounding Coordinates. Please try again with [Y/N]")
     else:
         print("Your arguments are invalid. Try again.")
         print("Correct format is:\n"
-              "\tKML_Coord_Extractor\t{Diagram_Name}\t{Diagram_File_Path}\n")
+              "\t{EXE FILE PATH}\t{KML FILE PATH}\t{OPTIONAL: ROUND COORDINATES [Y/N]}\n")
 
-    thisDict = {}
-
-    with open(xmlFilePath, "r") as inFile:
-        print(f"Reading File:\n\t{xmlFilePath}")
-
+    with open(kmlFilePath, "r") as inFile:
+        print(f"Reading File:\n\t{kmlFilePath}")
         lines = inFile.readlines()
 
         grabCoords = False
@@ -54,13 +60,13 @@ if __name__ == '__main__':
 
             if title != "" and len(coords) >= 1:
                 try:
-                    thisDict[title] = coords
+                    kmlPlaceMarkers[title] = coords
                 except KeyError:
                     print(f"There is already a Key with data in this Dictionary! Please fix name!\n{title}")
 
     with open(outFilePath, "w") as outFile:
         print(f"Starting to write Output File:\n\t{outFilePath}")
-        for title, coordinate in thisDict.items():
+        for title, coordinate in kmlPlaceMarkers.items():
             outFile.write(f"\n[{title}]\n")
 
             for indvCoord in coordinate:
