@@ -9,4 +9,4 @@ Convert KML file from Google Earth Pro to a text file for VATSIM Tower Trainer. 
   - Inside CMD or Powershell type the following (replace everything inside of {} with your specific information)
     - {location of exe} {.kml file path}
     - Example: "C:\Users\nikol\Downloads\main.exe" "C:\Users\nikol\Downloads\KSLC.kml"
-    - NOTE: You do not need the full file paths if the .exe and the .kml file are in the same folder (i.e. main.exe KSLC )
+    - NOTE: You do not need the full file paths if the .exe and the .kml file are in the same folder (i.e. main.exe KSLC.kml )
