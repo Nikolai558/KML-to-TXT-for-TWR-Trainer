@@ -12,3 +12,7 @@ Convert KML file from Google Earth Pro to a text file for VATSIM Tower Trainer. 
     - NOTE: You do not need the full file paths if the .exe and the .kml file are in the same folder (i.e. main.exe KSLC.kml )
   - OPTIONAL Argument:
     - At the very end you can add "Y" or "N" to round the cordinates to the 5th decimal place. DEFAULT IS ROUND 5 Decimal Places! 
+
+This will now convert back and forth. 
+
+WARNING - WILL OVERWRITE FILES. For example if you are converting KSLC.KML the program will write to KSLC.TXT. Same Vise Versa, KSLC.TXT will overwrite to KSLC.TXT
