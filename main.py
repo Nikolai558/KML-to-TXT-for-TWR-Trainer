@@ -2,6 +2,7 @@ import sys
 
 xmlFilePath = ""
 outFilePath = ""
+roundCoords = False
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
@@ -67,8 +68,9 @@ if __name__ == '__main__':
                     lon = indvCoord.split(",")[0]
                     lat = indvCoord.split(",")[1]
 
-                    lon = str(round(float(lon), 5))
-                    lat = str(round(float(lat), 5))
+                    if roundCoords:
+                        lon = str(round(float(lon), 5))
+                        lat = str(round(float(lat), 5))
 
                     outFile.write(f"{lat} {lon}\n")
 
