@@ -15,4 +15,4 @@ Convert KML file from Google Earth Pro to a text file for VATSIM Tower Trainer. 
 
 This will now convert back and forth. 
 
-WARNING - WILL OVERWRITE FILES. For example if you are converting KSLC.KML the program will write to KSLC.TXT. Same Vise Versa, KSLC.TXT will overwrite to KSLC.TXT
+WARNING - WILL OVERWRITE FILES. For example if you are converting KSLC.KML the program will write to KSLC.TXT. Same Vise Versa, KSLC.TXT will overwrite to KSLC.KML
